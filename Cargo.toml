@@ -1,0 +1,11 @@
+[package]
+name = "epoll"
+version = "0.1.0"
+authors = ["Gilad Naaman <gilad.naaman@gmail.com>"]
+readme = "README.md"
+keywords = ["epoll"]
+license = 'MIT/Apache-2.0'
+
+[dependencies]
+libc = "^0.2"
+bitflags = "^0.7"
