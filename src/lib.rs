@@ -24,7 +24,7 @@
 //! # Example
 //! 
 //! ```no-run
-//! let mut epoll = EPoll::new();
+//! let mut epoll = EPoll::new().unwrap();
 //! 
 //! // Register a file-like object onto the epoll.
 //! // The last parameter is a user-defined identifier
@@ -35,8 +35,8 @@
 //! let event_count = epoll.wait(&mut events, Timeout::Milliseconds(500))?;
 //! for e in &events[..event_count] {
 //!     match e.data {
-//!         0 => { /* Do something with the socket */ },
-//!         1 => { /* Do something with the timer  */ },
+//!         0 => { /* Do something with the pipe  */ },
+//!         1 => { /* Do something with the timer */ },
 //!         _ => unreachable!()
 //!     };
 //! }
@@ -50,6 +50,8 @@ use std::os::unix::io::{RawFd, AsRawFd};
 
 mod ffi;
 pub use ffi::*;
+
+pub mod event_loop;
 
 /// An object used to poll for many events at once.
 pub struct EPoll {
