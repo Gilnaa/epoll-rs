@@ -1,5 +1,5 @@
 # epoll-rs
-A safe and sufficient wrapper around Linux's EPoll interface.
+A safe and (in)sufficient wrapper around Linux's EPoll interface.
 
 # Example
 ```rust
